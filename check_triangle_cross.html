@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对号 叉号 三角形</title>
+  <style>
+    html,
+    body,
+    div,
+    p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      padding: 20px;
+    }
+
+    /* 三角形 start */
+    .triangle {
+      width: 0;
+      height: 0;
+      border-width: 0 10px 16px;
+      border-style: solid;
+      border-color: transparent transparent #888;
+      margin-left: 16px;
+      transition: transform .2s;
+    }
+
+    .triangle.active {
+      border-color: transparent transparent #22C2BB;
+      transform: rotate(180deg);
+    }
+
+    /* 三角形 end */
+
+    /* 对号 start */
+    .check-mark {
+      width: 48px;
+      height: 48px;
+      position: relative;
+    }
+
+    .check-mark::before,
+    .check-mark::after {
+      content: "";
+      width: calc(100%/3);
+      height: 2px;
+      background-color: #22C2BB;
+      transform: rotate(-135deg);
+      position: absolute;
+      top: 70%;
+      left: 40%;
+      border-radius: 2px;
+      transform-origin: left bottom;
+    }
+
+    .check-mark::after {
+      width: calc((100%/3)*2);
+      transform: rotate(-45deg);
+    }
+
+    /* 对号 end */
+
+    /* 叉号 start */
+    .cross {
+      display: block;
+      width: 60px;
+      height: 60px;
+      position: relative;
+      left: 0;
+    }
+
+    .cross::before,
+    .cross::after {
+      content: "";
+      width: 32px;
+      height: 2px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -1px 0 0 -16px;
+      transform: rotate(45deg);
+      border-radius: 2px;
+      background-color: #333333;
+    }
+
+    .cross::after {
+      transform: rotate(-45deg);
+    }
+    /* 叉号 end */
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <!-- 对号 -->
+    <div class="check-mark"></div>
+  </div>
+  <div class="box">
+    <!-- 三角形 -->
+    <div class="triangle"></div>
+  </div>
+  <div class="box">
+    <!-- 叉号 -->
+    <div class="cross"></div>
+  </div>
+</body>
+
+</html>
